@@ -1,6 +1,4 @@
-# Assignment 2 | 
-
-DNA Sequence Analysis
+# Assignment 2 | DNA Sequence Analysis
 
 ## Student
 Vignesh Gutta
