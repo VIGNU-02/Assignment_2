@@ -16,7 +16,7 @@ Files Included
 
 chr1_GL383518v1_alt.fa – The FASTA file that holds the DNA sequence being studied.
 
-assignment_code.py – Python program that carries out all the tasks in this assignment.
+code.py – Python program that carries out all the tasks in this assignment.
 
 README.md – This document, which explains the approach, key steps, and results.
 
