@@ -2,7 +2,7 @@
 
 #README: DNA Sequence Analysis Assignment  
 
-Student: vignesh gutta
+Student: VIGNESH GUTTA
 
 Course: Informatics 573
 
