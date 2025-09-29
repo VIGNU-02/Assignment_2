@@ -1,7 +1,11 @@
 # Assignment_2
-#README: DNA Sequence Analysis Assignment
+
+#README: DNA Sequence Analysis Assignment  
+
 Student: vignesh gutta
+
 Course: Informatics 573
+
 Assignment: DNA Sequence Processing and Analysis
 
 Overview
