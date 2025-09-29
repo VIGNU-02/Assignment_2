@@ -20,7 +20,7 @@ assignment_code.py – Python program that carries out all the tasks in this ass
 
 README.md – This document, which explains the approach, key steps, and results.
 
-Methodology
+process
 1. Extracting the DNA Sequence
 
 I started by reading the FASTA file. Since lines beginning with > are just headers, I skipped those and combined the remaining lines to get the full DNA sequence. From there, I pulled out specific nucleotides at certain positions, like the 10th and the 758th bases, to make sure indexing worked correctly.
