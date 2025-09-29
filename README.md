@@ -56,8 +56,11 @@ All steps were automated using a Python 3 script, ensuring reproducibility and e
 3. Differences may also arise due to non-ACGT characters or sequence truncation.  
 
 ## How to Run
-1. Copy `code.py` and `chr1_GL383518v1_alt.fa` to the working directory on Quartz.  
-2. Open a terminal and navigate to the directory.  
-3. Run the script with:  
+1. Make sure you have Python 3 installed. You can run the script on Quartz or any local Python 3 environment.  
+2. Ensure that `code.py` and `chr1_GL383518v1_alt.fa` are in the same working directory.
+   > **Note:** If you do not have the chromosome 1 FASTA file (`chr1_GL383518v1_alt.fa`), you can download it from the UCSC Genome Browser: [Download link](https://hgdownload.soe.ucsc.edu/goldenPath/hg38/chromosomes/chr1_GL383518v1_alt.fa).  
+> For this assignment, I have used the file already downloaded from Assignment 1.  
+4. Open a terminal and navigate to the directory.  
+5. Run:
    ```bash
    python3 code.py
