@@ -1,47 +1,63 @@
-# Assignment_2
+# Assignment 2 | DNA Sequence Analysis
 
-#README: DNA Sequence Analysis Assignment  
+## Student
+Vignesh Gutta
 
-Student: VIGNESH GUTTA
+## Course
+Informatics 573
 
-Course: Informatics 573
+## Assignment
+DNA Sequence Processing and Analysis
 
-Assignment: DNA Sequence Processing and Analysis
+## Overview
+For this assignment, I worked on reading and analyzing a DNA sequence stored in a FASTA file. The main goals were:  
 
-Overview
+1. Extract specific bases from the sequence.  
+2. Generate the reverse complement of the DNA sequence.  
+3. Count the occurrence of each nucleotide (A, C, G, T) in kilobase segments of the sequence.  
 
-For this assignment, I worked on reading and analyzing a DNA sequence stored in a FASTA file. The main goals were to pull out specific bases from the sequence, generate its reverse complement, and count how often each nucleotide (A, C, G, T) appears in different sections of the sequence. To make this process efficient and reproducible, I wrote a Python script that automates each step.
+All steps were automated using a Python 3 script, ensuring reproducibility and ease of analysis.
 
-Files Included
+## Environment
+- Python 3, run on the **Quartz high-performance computing cluster** at IU.  
+- No additional Python packages are required.  
 
-chr1_GL383518v1_alt.fa – The FASTA file that holds the DNA sequence being studied.
+## Files Included
+- `chr1_GL383518v1_alt.fa` – FASTA file containing the DNA sequence.  
+- `code.py` – Python 3 script performing all tasks for this assignment.  
+- `README.md` – This file describing the approach, files, and results.
 
-code.py – Python program that carries out all the tasks in this assignment.
+## Process
 
-README.md – This document, which explains the approach, key steps, and results.
+### Extracting the DNA Sequence
+- Read the FASTA file and ignored header lines (starting with `>`).  
+- Combined remaining lines to create the full DNA sequence.  
+- Verified specific positions: the 10th and 758th bases.
 
-process
-1. Extracting the DNA Sequence
+### Complement and Reverse Complement
+- Defined a `complement()` function to swap A↔T and C↔G.  
+- Reversed the complemented sequence to generate the reverse complement.  
+- Checked specific positions (79th and 500–800th bases) to confirm correctness.
 
-I started by reading the FASTA file. Since lines beginning with > are just headers, I skipped those and combined the remaining lines to get the full DNA sequence. From there, I pulled out specific nucleotides at certain positions, like the 10th and the 758th bases, to make sure indexing worked correctly.
+### Counting Nucleotides per Kilobase
+- Divided the sequence into chunks of 1000 bases (1 kb).  
+- Counted occurrences of A, C, G, and T in each kilobase.  
+- Stored results in a nested dictionary with kilobase labels.
 
-2. Complement and Reverse Complement
+### Analyzing Counts
+- For the first kilobase, created a list with counts of each nucleotide.  
+- Repeated this process for all kilobases, creating a list of lists.  
+- Summed counts per kilobase to verify totals.  
+- Observed that most kilobases sum to 1000; the final kilobase may be shorter if the sequence length is not a multiple of 1000.  
 
-To explore the complementary strand, I wrote a complement() function that swaps bases (A with T, C with G). Reversing that sequence gave me the reverse complement, which is a common task in DNA analysis. I also checked a few specific positions from this strand to confirm everything was working as expected.
+### Observations
+1. Expected sum per kilobase: 1000 bases.  
+2. Last kilobase may have fewer bases if the sequence does not divide evenly.  
+3. Differences may also arise due to non-ACGT characters or sequence truncation.  
 
-3. Counting Nucleotides per Kilobase
-
-Next, I divided the sequence into chunks of 1000 bases (1 kb). For each chunk, I counted how many A’s, C’s, G’s, and T’s were present. These counts were stored in a dictionary, and I wrote a helper function n_count() to repeat this process across the whole sequence automatically.
-
-4. Analyzing and Checking the Counts
-
-For the very first kilobase, I looked at the nucleotide counts individually.
-
-I extended this to all kilobases, collecting the counts into a structured list.
-
-The counts were printed alongside the kilobase index so I could easily track them.
-
-To double-check, I added up the counts within each kilobase. Most sums came out to 1000, which makes sense.
-
-If the final kilobase was shorter, the total was less than 1000. This was expected.
-...
+## How to Run
+1. Copy `code.py` and `chr1_GL383518v1_alt.fa` to the working directory on Quartz.  
+2. Open a terminal and navigate to the directory.  
+3. Run the script with:  
+   ```bash
+   python3 code.py
